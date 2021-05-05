@@ -3,6 +3,13 @@
   flex-direction: column;
   width: 100%;
   padding: 2rem;
+
+  input{
+    background-color: var(--darkBlue);
+    border: none;
+    height: 2rem;
+    border-radius: .5rem;
+  }
 }
 
 .cards{

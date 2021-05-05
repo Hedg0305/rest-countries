@@ -26,6 +26,7 @@ const Home = () => {
     <div className={styles.wrapper}>
       <div className={styles.options}>
         <input type="text" name="countrie" id="countrie" />
+
       </div>
 
       <div className={styles.cards}>
