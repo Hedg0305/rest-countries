@@ -25,7 +25,12 @@ const Home = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.options}>
-        <input type="text" name="countrie" id="countrie" />
+        <input
+          type="text"
+          name="countrie"
+          id="countrie"
+          placeholder="Search for a country"
+        />
 
       </div>
 
