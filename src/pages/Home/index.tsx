@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import { RiArrowDownSLine } from 'react-icons/ri';
+
 import CardCountrie from '../../components/CardCountrie';
 import { getAllCountries } from '../../services/api';
+
 import styles from './style.module.scss';
 
 interface Countrie{
@@ -13,7 +16,8 @@ interface Countrie{
 
 const Home = () => {
   const [countries, setCountries] = useState<Countrie[]>();
-  const [filter, setFilter] = useState('');
+  const [filterByName, setFilterByName] = useState('');
+  const [filterByRegion, setFilterByRegion] = useState('');
 
   useEffect(() => {
     const loadHome = async () => {
@@ -23,8 +27,12 @@ const Home = () => {
     loadHome();
   }, []);
 
-  const hadleChange = (event:React.ChangeEvent<HTMLInputElement>) => {
-    setFilter(event.target.value);
+  const hadleInputChange = (event:React.ChangeEvent<HTMLInputElement>) => {
+    setFilterByName(event.target.value);
+  };
+
+  const hadleSelectChange = (event:React.ChangeEvent<HTMLSelectElement>) => {
+    setFilterByRegion(event.target.value);
   };
 
   return (
@@ -35,26 +43,37 @@ const Home = () => {
           name="countrie"
           id="countrie"
           placeholder="Search for a country"
-          onChange={hadleChange}
+          onChange={hadleInputChange}
         />
 
-        <select name="region" id="region">
-          <option
-            value=""
-            disabled
-          >Filter by region
-          </option>
-          <option value="volvo">Volvo</option>
-          <option value="saab">Saab</option>
-          <option value="opel">Opel</option>
-          <option value="audi">Audi</option>
-        </select>
+        <div className={styles.selectBox}>
+          <RiArrowDownSLine
+            size={24}
+            color="white"
+          />
 
+          <select name="region" id="region" onChange={hadleSelectChange}>
+            <option
+              value=""
+              disabled
+              selected
+            >Filter by region
+            </option>
+            <option value="">All</option>
+            <option value="Africa">Africa</option>
+            <option value="Americas">America</option>
+            <option value="Asia">Asia</option>
+            <option value="Europe">Europe</option>
+            <option value="Oceania">Oceania</option>
+
+          </select>
+        </div>
       </div>
 
       <div className={styles.cards}>
         {countries?.filter((countrie) => {
-          return countrie.name.toLowerCase().includes(filter.toLowerCase());
+          return countrie.name.toLowerCase().includes(filterByName.toLowerCase())
+            && countrie.region.includes(filterByRegion);
         })
           .map((countrie) => (
             <CardCountrie

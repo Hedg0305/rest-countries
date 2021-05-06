@@ -17,15 +17,26 @@
       color: var(--white);
     }
 
-    select{
-      background-color: var(--darkBlue);
-      border-radius: .5rem;
-      border: none;
-      width: 10rem;
-      color: var(--white);
-      padding: 0rem .5rem; 
-      appearance: none;
-      cursor: pointer;
+    .selectBox {
+      display: flex;
+      align-items: center;
+
+      select{
+        background-color: var(--darkBlue);
+        border-radius: .5rem;
+        border: none;
+        width: 10rem;
+        height: 2.5rem;
+        color: var(--white);
+        padding: 0rem .5rem; 
+        appearance: none;
+        cursor: pointer;
+      } 
+      
+      svg{
+        transform: translateX(155px);
+      }
+
     }
   }
 }

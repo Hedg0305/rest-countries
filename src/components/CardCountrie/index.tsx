@@ -18,7 +18,7 @@ const CardCountrie = ({
 
     <div className={styles.info}>
       <h2>{name}</h2>
-      <p>Population: {population}</p>
+      <p>Population: {population.toLocaleString()}</p>
       <p>Region: {region}</p>
       <p>Capital: {capital}</p>
     </div>
