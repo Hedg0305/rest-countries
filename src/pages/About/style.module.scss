@@ -24,8 +24,14 @@
     grid-template-columns: repeat(2, 1fr);
 
 
+    img{
+      max-width: 100%;
+    }
+
     .info{
-      margin-left: 4rem;
+      margin-left: 2rem;
+
+      
 
       h2{
         display: block;
@@ -33,19 +39,17 @@
       }
 
       .text{
-        display: flex;
-
+        display: grid;
+        word-break: break-all;
+        grid-template-columns: repeat(2, 1fr);
         p{
           margin-bottom: .3rem;
           display: inline-block;
         }
 
-        p:nth-child(3n + 1){
+        .title{
           font-weight: 800;
-        }
-
-        .right{
-          margin-left: 3rem;
+          margin-right: .3rem;
         }
       }
     }

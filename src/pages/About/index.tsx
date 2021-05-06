@@ -58,17 +58,44 @@ const About = () => {
 
           <div className={styles.text}>
             <div className={styles.left}>
-              <p>Native Name: </p> <p>{countrie?.nativeName}</p><br />
-              <p>Population: </p> <p>{countrie?.population.toLocaleString() }</p><br />
-              <p>Region: </p> <p>{countrie?.region}</p> <br />
-              <p>Sub Region: </p> <p>{countrie?.subregion}</p> <br />
-              <p>Capital: </p> <p>{countrie?.capital}</p><br />
+              <p className={styles.title}>Native Name: </p>
+              <p>{countrie?.nativeName}</p><br />
+
+              <p className={styles.title}>Population: </p>
+              <p>{countrie?.population.toLocaleString()}</p><br />
+
+              <p className={styles.title}>Region: </p>
+              <p>{countrie?.region}</p> <br />
+
+              <p className={styles.title}>Sub Region: </p>
+              <p>{countrie?.subregion}</p> <br />
+
+              <p className={styles.title}>Capital: </p>
+              <p>{countrie?.capital}</p><br />
             </div>
 
             <div className={styles.right}>
-              <p>Top Level Domain: </p> <p>{countrie?.topLevelDomain}</p><br />
-              <p>Currencies: </p> <p>{countrie?.population.toLocaleString()}</p><br />
-              <p>Languages: </p> <p>{countrie?.flag}</p><br />
+              <p className={styles.title}>Top Level Domain: </p>
+              <p>{countrie?.topLevelDomain}</p><br />
+
+              <p className={styles.title}>Currencies: </p>
+              {countrie?.currencies.map((currencie, index, array) => {
+                return (
+                  <span key={currencie.name}>
+                    {currencie.name}{array[index + 1] ? ', ' : '.'}
+                  </span>
+                );
+              })}
+              <br />
+
+              <p className={styles.title}>Languages:</p>
+              {countrie?.languages.map((language, index, array) => {
+                return (
+                  <span key={language.name}>
+                    {language.name}{array[index + 1] ? ', ' : '.'}
+                  </span>
+                );
+              })}<br />
             </div>
           </div>
         </div>
