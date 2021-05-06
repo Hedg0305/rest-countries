@@ -4,13 +4,29 @@
   width: 100%;
   padding: 2rem;
 
-  input{
-    background-color: var(--darkBlue);
-    border: none;
-    height: 2.5rem;
-    border-radius: .5rem;
-    padding: 1rem;
-    color: var(--white);
+  .options{
+    display: flex;
+    justify-content: space-between;
+
+    input{
+      background-color: var(--darkBlue);
+      border: none;
+      height: 2.5rem;
+      border-radius: .5rem;
+      padding: 1rem;
+      color: var(--white);
+    }
+
+    select{
+      background-color: var(--darkBlue);
+      border-radius: .5rem;
+      border: none;
+      width: 10rem;
+      color: var(--white);
+      padding: 0rem .5rem; 
+      appearance: none;
+      cursor: pointer;
+    }
   }
 }
 

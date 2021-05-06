@@ -46,7 +46,8 @@
             }
          ],
          "@typescript-eslint/explicit-module-boundary-types": "off",
-         "react/jsx-one-expression-per-line": "off"
+         "react/jsx-one-expression-per-line": "off",
+         "arrow-body-style": "off"
     },
     "settings": {
         "import/resolver": {
