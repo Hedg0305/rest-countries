@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import styles from './style.module.scss';
 
 interface CardCountrieProps{
@@ -11,7 +13,7 @@ interface CardCountrieProps{
 const CardCountrie = ({
   name, region, capital, population, flag,
 }: CardCountrieProps) => (
-  <div className={styles.card}>
+  <Link to={`/about/${name}`} className={styles.card}>
     <div className={styles.flag}>
       <img src={flag} alt="Flag" />
     </div>
@@ -22,7 +24,7 @@ const CardCountrie = ({
       <p>Region: {region}</p>
       <p>Capital: {capital}</p>
     </div>
-  </div>
+  </Link>
 );
 
 export default CardCountrie;

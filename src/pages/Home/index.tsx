@@ -56,7 +56,7 @@ const Home = () => {
             <option
               value=""
               disabled
-              selected
+              defaultValue=""
             >Filter by region
             </option>
             <option value="">All</option>

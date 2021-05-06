@@ -5,3 +5,7 @@ export const api = axios.create({
 });
 
 export const getAllCountries = () => api.get('/all');
+
+export const getCountry = (name: string) => {
+  return api.get(`name/${name}?fullText=true`);
+};
